@@ -53,11 +53,11 @@ for (let i = 0; i < numeri.length; i++) {
 console.log(pari)
 
 // short solution
-const numeriPari = numeri.filter((num) => num % 2 === 0);
+// const pari = numeri.filter((num) => num % 2 === 0);
 
-console.log(numeriPari)
+// console.log(pari)
 
-console.log('Stringa infinita Difficile');
+console.log('Stringa infinita - Difficile');
 
 const infinityString = 'abcdefghijklmnopqrstuvwxyz';
 
@@ -75,12 +75,30 @@ function selectInToTheString(string, start, end) {
   return stringSelect.join('')
 }
 
+console.log('Cifrario - Facile')
+
+const userWord = 'pAolo';
+
+function butterflyWordCreator(word) {
+
+  const butterflyWord = [];
+  
+  
+  for(let index = 0; index< word.length; index++) {
+    const letter = word[index];
+  
+    
+    if(letter.toLowerCase() === 'a' || letter.toLowerCase() === 'e' || letter.toLowerCase() === 'i' || letter.toLowerCase() === 'o' || letter.toLowerCase() === 'u') {
+      butterflyWord.push(letter, 'f', letter)
+    } else {
+      butterflyWord.push(letter)
+    }
+  }
+  return butterflyWord.join('')
+}
 
 
-
-
-
-
+console.log(butterflyWordCreator(userWord))
 
 
 
