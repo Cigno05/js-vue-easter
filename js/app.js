@@ -95,11 +95,19 @@ function selectMultipleOf(numbersArray, number) {
 
 console.log('Stringa infinita - Difficile');
 
-const infinityString = 'abcdefghijklmnopqrstuvwxyz';
+const infinityString = createRandomString(100);
 
+console.log(infinityString);
 console.log(selectInToTheString(infinityString, 5, 10))
 
-
+function createRandomString(length) {
+  const chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+  let result = "";
+  for (let i = 0; i < length; i++) {
+    result += chars.charAt(Math.floor(Math.random() * chars.length));
+  }
+  return result;
+}
 function selectInToTheString(string, start, end) {
 
   const stringSelect = [];
