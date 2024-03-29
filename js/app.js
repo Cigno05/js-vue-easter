@@ -57,6 +57,24 @@ const numeriPari = numeri.filter((num) => num % 2 === 0);
 
 console.log(numeriPari)
 
+console.log('Stringa infinita Difficile');
+
+const infinityString = 'abcdefghijklmnopqrstuvwxyz';
+
+console.log(selectInToTheString(infinityString, 5, 10))
+
+
+function selectInToTheString(string, start, end) {
+  
+  const stringSelect = [];
+
+  for(index = start; index < end; index++) {
+    const selected = string[index]
+    stringSelect.push(selected)
+  }
+  return stringSelect.join('')
+}
+
 
 
 
