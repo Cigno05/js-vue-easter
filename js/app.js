@@ -19,11 +19,11 @@ console.log('ARRAY Facile e medio');
 
 const numbers = [];
 const minNumber = 1;
-const maxNumber = 20;
+const lengthArrayNumbers = 20;
 const userNumber = 5;
-while (numbers.length < maxNumber) {
+while (numbers.length < lengthArrayNumbers) {
 
-  const randomNumber = Math.floor(Math.random() * maxNumber) + minNumber;
+  const randomNumber = Math.floor(Math.random() * 100) + minNumber;
 
   let thereIs = false;
 
