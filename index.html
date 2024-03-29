@@ -15,11 +15,24 @@
 
 
   <body>
+    
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <div id="app">
 
-      
-      
+      <div class="m-2 d-flex flex-column">
+        <label for="inputEuro" class="form-label">Converti gli Euro nella valuta</label>
+        <input type="number" id="inputEuro" placeholder="Inserisci la cifra in Euro" v-model="euro">
+      </div>
+      <div class="m-2">
+        <select id="foreignerCurrency" class="form-select" aria-label="Default select example">
+          <option selected>Scegli la valuta da convertire</option>
+          <option value="pounds">Sterlina</option>
+          <option value="dollar">Dollaro</option>
+          <option value="yen">Yen</option>
+        </select>
+        <button @click="converter" class="btn btn-dark mt-4">CONVERT</button>
+        <h2 class="m-2" >{{ converted }} {{ currency }}</h2>
+      </div>
       
       
     </div>

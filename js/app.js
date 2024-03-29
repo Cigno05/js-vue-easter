@@ -1,18 +1,35 @@
 console.log('JS funziona');
 
-// const { createApp } = Vue
+const { createApp } = Vue
 
-// createApp({
-//   data() {
-//     return {
-
-//     }
-//   },
-//   methods: {
-
-//   },
-
-// }).mount('#app')
+createApp({
+  data() {
+    return {
+      euro: '',
+      converted: '',
+      currency: '',
+    }
+  },
+  methods: {
+    converter() {
+      const select = document.querySelector('#foreignerCurrency').value;
+      let currency;
+      if(select === 'pounds') {
+        currency = 0.85
+        this.currency = '£'
+      } else if(select === 'dollar') {
+        currency = 1.08
+        this.currency = '$'
+      } else if(select === 'yen') {
+        currency = 163.18
+        this.currency = '¥'
+      }
+      this.converted = (this.euro * currency).toFixed(2);
+      this.euro = '';
+    }
+  },
+  
+}).mount('#app')
 
 
 console.log('ARRAY Facile e medio');
