@@ -15,11 +15,12 @@ console.log('JS funziona');
 // }).mount('#app')
 
 
-console.log('ARRAY Facile');
+console.log('ARRAY Facile e medio');
 
 const numbers = [];
 const minNumber = 1;
 const maxNumber = 20;
+const userNumber = 5;
 while (numbers.length < maxNumber) {
 
   const randomNumber = Math.floor(Math.random() * maxNumber) + minNumber;
@@ -39,20 +40,50 @@ while (numbers.length < maxNumber) {
 }
 console.log(numbers)
 
-console.log(selectEvenNumbers(numbers))
+console.log('numeri pari', selectEvenNumbers(numbers))
+console.log('numeri dispari', selectOddNumbers(numbers))
+console.log('numeri divisibili per ', userNumber ,selectMultipleOf(numbers, userNumber))
 
-function selectEvenNumbers(numberArray) {
+function selectEvenNumbers(numbersArray) {
   const evenNumbers = [];
   
-  for (let i = 0; i < numberArray.length; i++) {
-    let numeroCor = numberArray[i]
-    let rest = numeroCor % 2;
+  for (let i = 0; i < numbersArray.length; i++) {
+    let number = numbersArray[i]
+    let rest = number % 2;
 
     if (rest === 0) {
-      evenNumbers.push(numeroCor)
+      evenNumbers.push(number)
     }
   }
   return evenNumbers
+}
+
+function selectOddNumbers(numbersArray) {
+  const oddNumbers = [];
+  
+  for (let i = 0; i < numbersArray.length; i++) {
+    let number = numbersArray[i]
+    let rest = number % 2;
+
+    if (rest !== 0) {
+      oddNumbers.push(number)
+    }
+  }
+  return oddNumbers
+}
+
+function selectMultipleOf(numbersArray, number) {
+  const multipleOf = [];
+  const multipleOfThis = number;
+  for (let i = 0; i < numbersArray.length; i++) {
+    let number = numbersArray[i]
+    let rest = number % multipleOfThis;
+
+    if (rest === 0) {
+      multipleOf.push(number)
+    }
+  }
+  return multipleOf
 }
 
 
